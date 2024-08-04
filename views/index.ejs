@@ -1,0 +1,19 @@
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<html>
+    <body>
+        <h2>Enter in a message</h2>
+        <form method="POST" action="/new">
+            <input type="text" name="messageBody" required>
+            <button type="submit">Submit</button>
+         </form>
+        <% if (messages.length > 0) { %>
+        <% messages.forEach((message) => { %>
+            <%- include("messagecard", {message}) %>
+        <% }) %>
+        <% }  else { %>
+            <p> No messages currently </p>
+        <% } %>
+    </body>
+</html>
